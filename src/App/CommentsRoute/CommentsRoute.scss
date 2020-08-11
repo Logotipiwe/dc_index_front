@@ -1,0 +1,62 @@
+#CommentsRoute{
+	flex-grow: 1;
+	justify-content: center;
+	font-family: "Roboto", sans-serif;
+	
+	.comment{
+		position: absolute;
+		padding: 2px 6px;
+		border-radius: 4px;
+		transition: .3s;
+		cursor: default;
+	}
+	
+	.comment:hover{
+		z-index: 10000;
+		background-color: white;
+	}
+	
+	form{
+		margin-top: 30vh;
+		width: 400px;
+		opacity: 0.3;
+		transition: 1s;
+		height: 100px;
+		
+		.input{
+			width: 100%;
+			.text{
+				flex-grow: 1;
+				background-color: lightgrey;
+				border-radius: 5px 0 0 5px;
+				border: none;
+				height: 25px;
+				padding-left: 10px;
+				outline: none;
+			}
+			input[type=submit]{
+				width: 30px;
+				background-color: royalblue;
+				border: none;
+				border-radius: 0 5px 5px 0;
+				color: white;
+				cursor: pointer;
+			}
+		}
+		.err_msg{
+			margin: 10px 0;
+			padding: 0 6px;
+			border-radius: 4px;
+			background-color: white;
+			color: red;
+			width: max-content;
+		}
+	}
+	form:hover{
+		opacity: 0.99;
+		
+		p{
+			background-color: rgb(50,50,50);
+		}
+	}
+}

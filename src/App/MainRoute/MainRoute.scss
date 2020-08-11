@@ -1,0 +1,64 @@
+#MainRoute {
+	flex-grow: 1;
+	
+	.main_title {
+		margin: auto;
+		font-size: 50px;
+		font-weight: 600;
+		
+		.letter {
+			cursor: pointer;
+			transition: .5s;
+		}
+		.letter_bounce{
+			animation: bounce 1s;
+		}
+		
+		.letter::selection {
+			display: none;
+		}
+	}
+	
+	.my-node-enter {
+		opacity: 0;
+	}
+	
+	.my-node-enter-active {
+		opacity: 1;
+		transition: opacity 1000ms;
+	}
+	
+	.my-node-exit {
+		opacity: 1;
+	}
+	
+	.my-node-exit-active {
+		opacity: 0;
+		transition: opacity 1000ms;
+	}
+	
+	.menu_item{
+		height: 170px;
+		border: 1px solid black;
+		width: 170px;
+		justify-self: center;
+		align-self: center;
+		margin: 20px 0;
+		justify-content: center;
+		align-items: center;
+		font-size: 21px;
+		box-shadow: 3px 3px 10px black;
+	}
+}
+
+@keyframes bounce {
+	0% {
+		margin-top: 0;
+	}
+	50% {
+		margin-top: -15px;
+	}
+	100% {
+		margin-top: 0;
+	}
+}

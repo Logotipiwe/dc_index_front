@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from "./App/Header/Header";
+import MainRoute from "./App/MainRoute/MainRoute";
+import {inject, observer} from "mobx-react";
+import RootStore from './Stores/RootStore';
+import CommentsRoute from "./App/CommentsRoute/CommentsRoute";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+@inject("RootStore")
+@observer
+class App extends React.Component<{ RootStore?: RootStore, key?: any, id?: any }, any> {
+  render() {
+    const RootStore = this.props.RootStore!;
+    const MRStore = RootStore.MainRouteStore;
+    const backgroundColor = MRStore.getCSScolor(RootStore.appBgColor);
+    return (
+      <div id="App" style={{backgroundColor}}>
+        <Header/>
+        {RootStore.selectedRoute === "main" && <MainRoute/>}
+        {RootStore.selectedRoute === "comments" && <CommentsRoute/>}
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,0 +1,43 @@
+#Header{
+	font-family: "Roboto", sans-serif;
+	height: 40px;
+	width: 100vw;
+	justify-content: space-around;
+	
+	.link{
+		//color: #7f7f7f;
+		color: white;
+		cursor: pointer;
+		font-weight: 500;
+		letter-spacing: 1px;
+		flex-direction: column;
+		align-items: center;
+		
+		.title{
+			flex-grow: 1;
+			padding: 0 10px;
+			align-items: center;
+			transition: .3s;
+		}
+		
+		.blue{
+			color: royalblue;
+		}
+		
+		.underline{
+			height: 2.5px;
+			width: 0;
+			background-color: royalblue;
+			transition: .3s;
+		}
+	}
+	
+	.link:hover{
+		.title{
+			color: royalblue;
+		}
+		.underline{
+			width: 100%;
+		}
+	}
+}
