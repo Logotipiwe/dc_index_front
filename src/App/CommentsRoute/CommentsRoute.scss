@@ -51,6 +51,14 @@
 			color: red;
 			width: max-content;
 		}
+		.success_msg{
+			margin: 10px 0;
+			padding: 0 6px;
+			border-radius: 4px;
+			background-color: white;
+			color: green;
+			width: max-content;
+		}
 	}
 	form:hover{
 		opacity: 0.99;

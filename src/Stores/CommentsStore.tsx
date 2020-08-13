@@ -14,11 +14,20 @@ class CommentsStore {
 	@observable inputComment = '';
 
 	@observable isShowErr = false;
+	@observable isShowSuccess = false;
 	@observable errMsg: string = '';
 	hideErrTimeout: Undefindable<typeof setTimeout.prototype>;
 
 	@action.bound onInput(e: any) {
 		this.inputComment = e.target.value;
+	}
+
+	@action.bound showSuccess(){
+		this.isShowSuccess = true;
+		setTimeout(this.hideSuccess, 3500)
+	}
+	@action.bound hideSuccess(){
+		this.isShowSuccess = false;
 	}
 
 	@action.bound showErr(msg = 'Ошибка отправки') {
@@ -35,8 +44,8 @@ class CommentsStore {
 	@action.bound submit(e: any) {
 		e.preventDefault();
 		const url = (process.env.NODE_ENV === "development")
-			? "https://logotipiwe.ru/index/back/send.php"
-			: "https://logotipiwe.ru/index/back/send.php";
+			// ? "https://logotipiwe.ru/index/back/send.php" : "https://logotipiwe.ru/index/back/send.php";
+			? "http://localhost/index/back/send.php" : "index/back/send.php";
 		const msg = this.inputComment;
 		const sendTime = parseInt(localStorage.getItem('sendTime') || '0');
 		if (msg === '') return this.showErr('Надо что-то написать');
@@ -47,6 +56,8 @@ class CommentsStore {
 
 		fetch(url + '?text=' + msg).then(res => res.json()).then(res => {
 			if(!res.ok) return;
+			this.inputComment = '';
+			this.showSuccess();
 			localStorage.setItem('sendTime', new Date().getTime().toString());
 			this.fetchComments();
 		});
@@ -54,8 +65,8 @@ class CommentsStore {
 
 	@action.bound fetchComments() {
 		const url = (process.env.NODE_ENV === "development")
-			? 'https://logotipiwe.ru/index/back/get.php'
-			: 'index/back/get.php';
+			// ? 'https://logotipiwe.ru/index/back/get.php' : 'index/back/get.php';
+			? 'http://localhost/index/back/get.php' : 'index/back/get.php';
 		fetch(url).then(res => res.json()).then((res: IComment[]) => {
 			this.comments = (process.env.NODE_ENV === "development") ? res : res;
 		})

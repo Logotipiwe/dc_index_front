@@ -44,7 +44,8 @@ class CommentsRoute extends React.Component<{ RootStore?: RootStore, key?: any, 
 						/>
 						<input type='submit' value='>'/>
 					</div>
-					{CommentsStore.isShowErr && <div className='err_msg'>{CommentsStore.errMsg}</div>}
+					{CommentsStore.isShowErr && !CommentsStore.isShowSuccess && <div className='err_msg'>{CommentsStore.errMsg}</div>}
+					{CommentsStore.isShowSuccess && <div className='success_msg'>Сообщение отправлено, спасибо тебе ;)</div>}
 				</form>
 			</div>
 		);
