@@ -1,0 +1,21 @@
+.proj-tech-list {
+	flex-wrap: wrap;
+	
+	.proj-tech {
+		margin: 2px 20px 2px 0;
+		border-radius: 15px ;
+		background-color: lightgrey;
+		
+		img {
+			border-radius: 50%;
+			margin: 3px;
+			height: 20px;
+			width: 20px;
+		}
+		div{
+			align-items: center;
+			font-weight: 500;
+			margin: 0 10px 0 5px;
+		}
+	}
+}
