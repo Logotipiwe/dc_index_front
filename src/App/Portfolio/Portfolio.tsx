@@ -13,34 +13,36 @@ class Portfolio extends React.Component<{ RootStore?: RootStore }, any> {
 		return (
 			<div id='Portfolio'>
 				<div id='left-side' onScroll={PortfStore.onScrollThrottled}>
-					<a id='back' href='../'>Назад на главную</a>
-					<h1>Портфолио</h1>
-					<p className='text'>
-						Эта страница - описание <b>технологий</b>, которыми я владею и <b>проектов</b>, которые я разработал с их
-						использованием.<br/>
-					</p>
-					<h1>Технологии</h1>
-					<div id='tech-list'>
-						{PortfStore.techs.map((tech, i) => {
-							const techParsed = PortfStore.getTech(tech.title);
-							const backgroundImage = "url('index/img/" + techParsed.img + "')";
-							return (<div className='tech-item' key={i}>
-								<div style={{backgroundImage}}/>
-								<p>{techParsed.title}</p>
-							</div>)
-						})}
-					</div>
-					<h1>Проекты</h1>
-					<div id='proj-list'>
-						{PortfStore.projects.map(proj => {
-							return (
-								<div className='proj-item' key={proj.title}>
-									<h2>{proj.title}</h2>
-									<ProjTechsList techs={proj.techs.map(t => PortfStore.getTech(t))}/>
-									<p>{proj.desc}</p>
-								</div>
-							)
-						})}
+					<div id='left-side-content'>
+						<a id='back' href='../'>Назад на главную</a>
+						<h1>Портфолио</h1>
+						<p className='text'>
+							Эта страница - описание <b>технологий</b>, которыми я владею и <b>проектов</b>, которые я разработал с их
+							использованием.<br/>
+						</p>
+						<h1>Технологии</h1>
+						<div id='tech-list'>
+							{PortfStore.techs.map((tech, i) => {
+								const techParsed = PortfStore.getTech(tech.title);
+								const backgroundImage = "url('index/img/" + techParsed.img + "')";
+								return (<div className='tech-item' key={i}>
+									<div style={{backgroundImage}}/>
+									<p>{techParsed.title}</p>
+								</div>)
+							})}
+						</div>
+						<h1>Проекты</h1>
+						<div id='proj-list'>
+							{PortfStore.projects.map(proj => {
+								return (
+									<div className='proj-item' key={proj.title}>
+										<h2>{proj.title}</h2>
+										<ProjTechsList techs={proj.techs.map(t => PortfStore.getTech(t))}/>
+										<p>{proj.desc}</p>
+									</div>
+								)
+							})}
+						</div>
 					</div>
 				</div>
 				<div id='right-side'>

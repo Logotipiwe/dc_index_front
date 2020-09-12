@@ -32,72 +32,78 @@
 		overflow-y: scroll;
 		flex-direction: column;
 		flex-grow: 1;
-		
-		#tech-list {
-			flex-wrap: wrap;
+		align-items: center;
+		#left-side-content {
+			flex-direction: column;
+			max-width: 900px;
 			
-			.tech-item {
-				margin: 0 0 20px 30px;
-				flex-direction: column;
-				cursor: pointer;
-				width: 100px;
-				align-items: center;
+			#tech-list {
+				flex-wrap: wrap;
 				
-				div {
-					height: 100px;
+				.tech-item {
+					margin: 0 0 20px 30px;
+					flex-direction: column;
+					cursor: pointer;
 					width: 100px;
-					background-position: center;
-					background-size: 120%;
-					border-radius: 10px;
-					transition: background-size .5s;
+					align-items: center;
+					
+					div {
+						height: 100px;
+						width: 100px;
+						background-position: center;
+						background-size: 120%;
+						border-radius: 10px;
+						transition: background-size .5s;
+					}
+					
+					p {
+						margin: 10px 0 0;
+						font-weight: 500;
+					}
 				}
 				
-				p {
-					margin: 10px 0 0;
-					font-weight: 500;
+				.tech-item:hover {
+					div {
+						background-size: 140%;
+					}
 				}
-			}
-			
-			.tech-item:hover {
-				div {
+				
+				.tech-item:hover {
 					background-size: 140%;
 				}
 			}
 			
-			.tech-item:hover {
-				background-size: 140%;
-			}
-		}
-		
-		#proj-list {
-			flex-direction: column;
-			
-			.proj-item {
+			#proj-list {
 				flex-direction: column;
 				
-				p {
-					text-align: justify;
-					line-height: 2em;
-				}
-				
-				.text-img{
-					display: none;
+				.proj-item {
 					flex-direction: column;
-					justify-content: center;
-					img{
-						max-width: 80%;
-						justify-self: center;
+					
+					p {
+						text-align: justify;
+						line-height: 2em;
 					}
-					.desc{
-						font-size: 12px;
-						font-weight: 500;
-						text-align: center;
+					
+					.text-img {
+						display: none;
+						flex-direction: column;
+						justify-content: center;
+						
+						img {
+							max-width: 80%;
+							justify-self: center;
+						}
+						
+						.desc {
+							font-size: 12px;
+							font-weight: 500;
+							text-align: center;
+						}
 					}
 				}
 			}
 		}
 	}
-	
 	#left-side::-webkit-scrollbar {
 		display: none;
 	}
@@ -123,6 +129,7 @@
 		}
 	}
 }
+
 
 @media (max-width: 1000px) {
 	#Portfolio {
@@ -157,14 +164,16 @@
 		}
 		
 		#left-side{
-			#proj-list {
-				.proj-item {
-					p {
-						line-height: 1.5em;
-					}
-					
-					.text-img{
-						display: flex;
+			#left-side-content {
+				#proj-list {
+					.proj-item {
+						p {
+							line-height: 1.5em;
+						}
+						
+						.text-img {
+							display: flex;
+						}
 					}
 				}
 			}

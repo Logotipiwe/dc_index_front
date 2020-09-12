@@ -92,6 +92,8 @@ class PortfStore {
 				однако после подключения NodeJS на сервере был установлен <b>Docker</b>, а все сервисы помещены в контейнеры. В
 				качестве веб-сервера, принимающего запросы, был установлен контейнер с <b>Nginx</b>.<br/><br/>
 				{/* eslint-disable-next-line react/jsx-no-target-blank */}
+				Гит проект фронтенд-приложения: <a href='https://gitlab.com/Logotipiwe/keepbalancevk'
+				                                   target='_blank'>https://gitlab.com/Logotipiwe/keepbalancevk</a><br/>
 				Сервис доступен в приложении VK в разделе "Мини-приложения" под названием "keepBalance", либо по ссылке <a
 				href='https://logotipiwe.ru/keepbalancevk' target='_blank'>https://logotipiwe.ru/keepbalancevk</a>.<br/><br/>
 				В приложении сознательно допущены многочисленные неясности в интерфейсе, так как оно не расчитано на широкую
@@ -103,7 +105,8 @@ class PortfStore {
 					<img src='index/img/kbanal.png' className='img'/><p className='desc'>Аналитика в keepBalance</p>
 				</div>
 				<div className='text-img'>
-					<img src='index/img/kbtrans.png' className='img'/><p className='desc'>Оформление нового расхода в keepBalance</p>
+					<img src='index/img/kbtrans.png' className='img'/><p className='desc'>Оформление нового расхода в
+					keepBalance</p>
 				</div>
 			</>
 		},
@@ -169,16 +172,16 @@ class PortfStore {
 		console.log('Текущий: ' + imgNumShows);
 		console.log('Положение: ' + Math.round(galleryCurrPoint));
 		const closestOtherItemNum = (galleryCurrPoint % galleryItemHeight < galleryItemHeight / 2)
-				? (imgNumShows -1)
-				: (imgNumShows + 1);
+			? (imgNumShows - 1)
+			: (imgNumShows + 1);
 		this.galleryClosestItem = closestOtherItemNum;
 
-		const diffWithClosestBorder = galleryItemHeight/2 - Math.abs((galleryCurrPoint % galleryItemHeight) - galleryItemHeight/2);
+		const diffWithClosestBorder = galleryItemHeight / 2 - Math.abs((galleryCurrPoint % galleryItemHeight) - galleryItemHeight / 2);
 		this.imgOpacity = (diffWithClosestBorder < transitionLengthPX)
 			? diffWithClosestBorder / transitionLengthPX
 			: 1;
 		console.log('rkjptcn ' + closestOtherItemNum);
-		console.log('разница2 ' + diffWithClosestBorder );
+		console.log('разница2 ' + diffWithClosestBorder);
 	}
 
 	getTech(title: TechTitles): TechParsed {
