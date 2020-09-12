@@ -82,6 +82,10 @@
 					p {
 						text-align: justify;
 						line-height: 2em;
+						
+						a{
+							word-break: break-word;
+						}
 					}
 					
 					.text-img {
@@ -165,6 +169,9 @@
 		
 		#left-side{
 			#left-side-content {
+				#tech-list{
+					justify-content: space-around;
+				}
 				#proj-list {
 					.proj-item {
 						p {
