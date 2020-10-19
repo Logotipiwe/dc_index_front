@@ -7,6 +7,10 @@ import ProjTechsList from "./ProjTechsList";
 @inject("RootStore")
 @observer
 class Portfolio extends React.Component<{ RootStore?: RootStore }, any> {
+	componentDidMount(): void {
+		document.title = "Портфолио"
+	}
+
 	render() {
 		const PortfStore = this.props.RootStore!.PortfStore;
 

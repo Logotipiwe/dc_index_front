@@ -9,6 +9,7 @@ import {CSSTransition} from "react-transition-group";
 class MainRoute extends React.Component<{ RootStore?: RootStore, key?: any, id?: any }, any> {
 
 	componentDidMount(): void {
+		document.title = "Привет";
 		setTimeout(this.props.RootStore!.MainRouteStore.setDisplayMainTitle.bind(null, true), 1000)
 	}
 

@@ -15,6 +15,7 @@ class RootStore {
 	PortfStore: PortfStore;
 
 	@observable selectedRoute: routes = (process.env.NODE_ENV === "development") ? "main" : "main";
+	@observable urlParams = new URLSearchParams(window.location.search);
 	@action.bound selectRoute(newRoute: routes){
 		this.selectedRoute = newRoute;
 	}
@@ -22,6 +23,10 @@ class RootStore {
 		if(this.selectedRoute === "main") return this.MainRouteStore.getBgColor;
 		else if(this.selectedRoute === "comments") return {r: 50, g: 50, b: 50};
 		else return {r:255,g:255,b:255}
+	}
+
+	@computed get isHeaderContrast(){
+		return this.urlParams.get('mode') === 'easy';
 	}
 }
 

@@ -8,9 +8,8 @@ import "./CommentsRoute.scss"
 class CommentsRoute extends React.Component<{ RootStore?: RootStore, key?: any, id?: any }, any> {
 
 	componentDidMount(): void {
+		document.title = "Напиши что-нибудь";
 		this.props.RootStore!.CommentsStore.fetchComments();
-
-		// this.props.RootStore!.CommentsStore.showErr('Кек');
 	}
 
 	render() {

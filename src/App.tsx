@@ -11,7 +11,7 @@ import Portfolio from "./App/Portfolio/Portfolio";
 @observer
 class App extends React.Component<{ RootStore?: RootStore, key?: any, id?: any }, any> {
 	componentDidMount(): void {
-		const route = new URLSearchParams(window.location.search).get('route');
+		const route = this.props.RootStore!.urlParams.get('route');
 		if(!route) return;
 		if(route === 'portfolio') this.props.RootStore!.selectRoute("portfolio");
 	}

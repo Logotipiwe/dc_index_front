@@ -13,12 +13,18 @@ class Header extends React.Component<{RootStore?: RootStore}, any>{
       ["comments", "Комменты"]
     ];
 
-    const menuClass = (RootStore.selectedRoute === 'comments') ? 'title blue' : 'title';
+    const menuClass = (RootStore.selectedRoute === 'comments' || RootStore.isHeaderContrast) ? 'title blue' : 'title';
 
     return (
       <div id="Header">
         {links.map(route=>{
           const title = route[1];
+          const underlineClass = (
+            route[0] === RootStore.selectedRoute
+            && (RootStore.isHeaderContrast || RootStore.selectedRoute !== "main")
+          )
+            ? 'underline underline_filled'
+            : 'underline';
           return (
             <div
               className='link'
@@ -26,7 +32,7 @@ class Header extends React.Component<{RootStore?: RootStore}, any>{
               onClick={RootStore.selectRoute.bind(null, route[0])}
             >
               <div className={menuClass}>{title}</div>
-              <div className='underline'/>
+              <div className={underlineClass}/>
             </div>
           )
         })}
