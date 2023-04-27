@@ -1,0 +1,53 @@
+name: Index Front CD
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        repository: Logotipiwe/dc_vars
+        token: ${{secrets.PAT}}
+    - name: load-env
+      uses: duskmoon314/action-load-env@v1.1.0
+
+    - uses: actions/checkout@v3
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ env.DOCKER_USER }}
+        password: ${{ env.DOCKER_PAT }}
+    - name: Build
+      id: build_push
+      run: |
+        ls
+        export IMAGE=${{ env.DOCKER_USER }}/index_front
+        docker build . -t ${IMAGE}
+        docker push -a ${IMAGE}
+        echo "IMAGE=${IMAGE}" >> "$GITHUB_ENV"
+    - name: Upload
+      uses: garygrossgarten/github-action-scp@release
+      with:
+        local: .
+        concurrency: 20
+        remote: /kuber/index_front
+        host: ${{ env.DC_HOST }}
+        username: ${{ env.SSH_USER }}
+        password: ${{ env.SSH_PASSWORD }}
+    - name: Deploy
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ env.DC_HOST }}
+        username: ${{ env.SSH_USER }}
+        password: ${{ env.SSH_PASSWORD }}
+        port: 22
+        script: |
+          export IMAGE=${{ env.IMAGE }}
+          docker-compose -f /kuber/index_front/index_front.yml down --remove-orphans
+          docker-compose -f /kuber/index_front/index_front.yml up -d
