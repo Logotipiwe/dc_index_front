@@ -1,0 +1,13 @@
+version: "3"
+services:
+  index_front:
+    container_name: index_front
+#    image: logotipiwe/index_front
+    build: .
+    volumes:
+    - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - dc-net
+networks:
+  dc-net:
+    external: true

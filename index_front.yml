@@ -1,0 +1,10 @@
+version: "3"
+services:
+  kb_front:
+    container_name: kb_front
+    image: logotipiwe/index_front
+    networks:
+      - dc-net
+networks:
+  dc-net:
+    external: true
