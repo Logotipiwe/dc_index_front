@@ -1,8 +1,8 @@
 version: "3"
 services:
-  kb_front:
-    container_name: kb_front
-    image: logotipiwe/index_front
+  index_front:
+    container_name: index_front
+    image: ${IMAGE}
     networks:
       - dc-net
 networks:

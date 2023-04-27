@@ -1,16 +1,20 @@
 import RootStore from "./RootStore";
 import React from "react";
-import {action, observable} from "mobx";
+import {makeAutoObservable} from "mobx";
 
 class PortfStore {
 	constructor(RootStore: RootStore) {
+		makeAutoObservable(this);
 		this.RootStore = RootStore;
+
+		this.onScrollThrottled = this.onScrollThrottled.bind(this);
+		this.getTech = this.getTech.bind(this);
 	}
 
-	@observable isThrottleScroll = false;
-	@observable imgNumShows: number = -1;
-	@observable imgOpacity: number = 1;
-	@observable galleryClosestItem = 0;
+	isThrottleScroll = false;
+	imgNumShows: number = -1;
+	imgOpacity: number = 1;
+	galleryClosestItem = 0;
 
 	RootStore: RootStore;
 
@@ -128,7 +132,7 @@ class PortfStore {
 		}
 	];
 
-	@observable gallery: GalleryItem[] = [
+	gallery: GalleryItem[] = [
 		{src: "lkmain.png", desc: "Меню личного кабинета Courseburg"},
 		{src: "lkcl.png", desc: "Страница клиентов в личном кабинете"},
 		{src: "lkanal.png", desc: "Аналитика в личном кабинете"},
@@ -137,7 +141,7 @@ class PortfStore {
 		{src: "kbtrans.png", desc: "keepBalance: оформление нового расхода"},
 	];
 
-	@action.bound onScrollThrottled() {
+	onScrollThrottled() {
 		if (this.isThrottleScroll) return;
 		else {
 			this.isThrottleScroll = true;

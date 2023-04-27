@@ -1,9 +1,10 @@
-import {action, computed, observable} from "mobx";
+import {makeAutoObservable} from "mobx";
 import RootStore from "./RootStore";
 
 
 class MainRouteStore {
 	constructor(RootStore: RootStore) {
+		makeAutoObservable(this);
 		this.RootStore = RootStore;
 		const title = '<Logotipiwe/>';
 		this.initColor = this.mainTitleColors[Math.floor(Math.random() * this.mainTitleColors.length)];
@@ -21,37 +22,43 @@ class MainRouteStore {
 				this.setBounce();
 			}, 5000)
 		}, 3000);
+
+		this.setBounce = this.setBounce.bind(this);
+		this.setDisplayMainTitle = this.setDisplayMainTitle.bind(this);
+		this.setTitleDefaultColor = this.setTitleDefaultColor.bind(this);
+		this.letterClick = this.letterClick.bind(this);
+		this.getCSScolor = this.getCSScolor.bind(this);
 	}
 
 	RootStore: RootStore;
 
-	@observable displayMainTitle = false;
+	displayMainTitle = false;
 
-	@observable bouncingLetterNum = -1;
+	bouncingLetterNum = -1;
 	bounceInterval: any;
 
-	@action.bound setBounce(val?: number) {
+	setBounce(val?: number) {
 		this.bouncingLetterNum = val || Math.floor(
 			(Math.random() * this.mainTitle.length - 2)
 		) + 2;
 	}
 
-	@observable mainTitleColors: Color[] = [
+	mainTitleColors: Color[] = [
 		{r: 234, g: 67, b: 53},
 		{r: 66, g: 133, b: 244},
 		{r: 52, g: 168, b: 83},
 		{r: 251, g: 188, b: 5},
 	];
 
-	@observable initColor: Color;
+	initColor: Color;
 
-	@observable defaultColor: Color = {r: 128, g: 128, b: 128};
+	defaultColor: Color = {r: 128, g: 128, b: 128};
 
-	@observable mainTitle: MainTitleLetter[];
+	mainTitle: MainTitleLetter[];
 
-	@observable isShowMenu: boolean = false;
+	isShowMenu: boolean = false;
 
-	@computed get getBgColor(): Color {
+	get getBgColor(): Color {
 		const avgR: number = this.mainTitle.reduce((sum, letter) => {
 			return sum + ((Object.is(this.defaultColor, letter.color)) ? 255 : letter.color.r);
 		}, 0);
@@ -68,18 +75,18 @@ class MainRouteStore {
 		};
 	}
 
-	@action.bound setDisplayMainTitle(val: boolean) {
+	setDisplayMainTitle(val: boolean) {
 		this.displayMainTitle = val;
 	}
 
-	@action.bound setTitleDefaultColor() {
+	setTitleDefaultColor() {
 		this.mainTitle.forEach((letter, i, arr)=>{
 			if (i === 0 || i === arr.length-1) return;
 			letter.color = this.defaultColor;
 		})
 	}
 
-	@action.bound letterClick(letter: MainTitleLetter) {
+	letterClick(letter: MainTitleLetter) {
 		const colorsToSelect = this.mainTitleColors.filter((x, i, arr) => arr.indexOf(letter.color) !== i);
 		letter.color = (process.env.NODE_ENV === 'development' && 0)
 			? this.initColor
@@ -89,7 +96,7 @@ class MainRouteStore {
 		clearInterval(this.bounceInterval);
 	}
 
-	@computed get isTitleInSameColor() {
+	get isTitleInSameColor() {
 		return this.mainTitle.filter(x => !Object.is(this.initColor, x.color)).length === 0;
 	}
 

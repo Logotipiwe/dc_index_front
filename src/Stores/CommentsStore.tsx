@@ -1,47 +1,56 @@
 import RootStore from "./RootStore";
-import {action, observable} from "mobx";
+import {makeAutoObservable} from "mobx";
 
 
 class CommentsStore {
 	constructor(RootStore: RootStore) {
+		makeAutoObservable(this);
 		this.RootStore = RootStore;
+
+		this.onInput = this.onInput.bind(this);
+		this.showSuccess = this.showSuccess.bind(this);
+		this.hideSuccess = this.hideSuccess.bind(this);
+		this.hideErr = this.hideErr.bind(this);
+		this.submit = this.submit.bind(this);
+		this.fetchComments = this.fetchComments.bind(this);
+
 	}
 
 	RootStore: RootStore;
 
-	@observable comments: IComment[] = [];
+	comments: IComment[] = [];
 
-	@observable inputComment = '';
+	inputComment = '';
 
-	@observable isShowErr = false;
-	@observable isShowSuccess = false;
-	@observable errMsg: string = '';
+	isShowErr = false;
+	isShowSuccess = false;
+	errMsg: string = '';
 	hideErrTimeout: Undefindable<typeof setTimeout.prototype>;
 
-	@action.bound onInput(e: any) {
+	onInput(e: any) {
 		this.inputComment = e.target.value;
 	}
 
-	@action.bound showSuccess(){
+	showSuccess(){
 		this.isShowSuccess = true;
 		setTimeout(this.hideSuccess, 3500)
 	}
-	@action.bound hideSuccess(){
+	hideSuccess(){
 		this.isShowSuccess = false;
 	}
 
-	@action.bound showErr(msg = 'Ошибка отправки') {
+	showErr(msg = 'Ошибка отправки') {
 		this.errMsg = msg;
 		this.isShowErr = true;
 		this.hideErrTimeout = setTimeout(this.hideErr, 3000);
 	}
 
-	@action.bound hideErr() {
+	hideErr() {
 		this.errMsg = '';
 		this.isShowErr = false;
 	}
 
-	@action.bound submit(e: any) {
+	submit(e: any) {
 		e.preventDefault();
 		const url = (process.env.NODE_ENV === "development")
 			// ? "https://logotipiwe.ru/index/back/send.php" : "https://logotipiwe.ru/index/back/send.php";
@@ -63,7 +72,7 @@ class CommentsStore {
 		});
 	}
 
-	@action.bound fetchComments() {
+	fetchComments() {
 		const url = (process.env.NODE_ENV === "development")
 			// ? 'https://logotipiwe.ru/index/back/get.php' : 'index/back/get.php';
 			? 'http://localhost/index/back/get.php' : 'index/back/get.php';
