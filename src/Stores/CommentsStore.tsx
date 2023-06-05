@@ -53,8 +53,7 @@ class CommentsStore {
 	submit(e: any) {
 		e.preventDefault();
 		const url = (process.env.NODE_ENV === "development")
-			// ? "https://logotipiwe.ru/index/back/send.php" : "https://logotipiwe.ru/index/back/send.php";
-			? "http://localhost/index/back/send.php" : "index/back/send.php";
+			? "http://localhost/index/back/send.php" : "index_back/send.php";
 		const msg = this.inputComment;
 		const sendTime = parseInt(localStorage.getItem('sendTime') || '0');
 		if (msg === '') return this.showErr('Надо что-то написать');
@@ -74,8 +73,7 @@ class CommentsStore {
 
 	fetchComments() {
 		const url = (process.env.NODE_ENV === "development")
-			// ? 'https://logotipiwe.ru/index/back/get.php' : 'index/back/get.php';
-			? 'http://localhost/index/back/get.php' : 'index/back/get.php';
+			? 'http://localhost/index/back/get.php' : 'index_back/get.php';
 		fetch(url).then(res => res.json()).then((res: IComment[]) => {
 			this.comments = (process.env.NODE_ENV === "development") ? res : res;
 		})
