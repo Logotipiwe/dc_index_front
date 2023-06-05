@@ -27,9 +27,9 @@ jobs:
       id: build_push
       run: |
         ls
-        export IMAGE=${{ env.DOCKER_USER }}/index_front
+        export IMAGE=${{ env.DOCKER_USER }}/index_front:$(date +%s)
         docker build . -t ${IMAGE}
-        docker push -a ${IMAGE}
+        docker push ${IMAGE}
         echo "IMAGE=${IMAGE}" >> "$GITHUB_ENV"
     - name: Upload
       uses: garygrossgarten/github-action-scp@release
