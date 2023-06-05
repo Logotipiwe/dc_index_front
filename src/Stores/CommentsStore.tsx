@@ -53,7 +53,7 @@ class CommentsStore {
 	submit(e: any) {
 		e.preventDefault();
 		const url = (process.env.NODE_ENV === "development")
-			? "http://localhost/index/back/send.php" : "index_back/send.php";
+			? "http://localhost/index/back/send.php" : "comments_back/send.php";
 		const msg = this.inputComment;
 		const sendTime = parseInt(localStorage.getItem('sendTime') || '0');
 		if (msg === '') return this.showErr('Надо что-то написать');
@@ -73,7 +73,7 @@ class CommentsStore {
 
 	fetchComments() {
 		const url = (process.env.NODE_ENV === "development")
-			? 'http://localhost/index/back/get.php' : 'index_back/get.php';
+			? 'http://localhost/index/back/get.php' : 'comments_back/get.php';
 		fetch(url).then(res => res.json()).then((res: IComment[]) => {
 			this.comments = (process.env.NODE_ENV === "development") ? res : res;
 		})
