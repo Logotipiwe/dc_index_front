@@ -5,8 +5,6 @@ services:
     image: ${IMAGE}
     networks:
       - dc-net
-    environment:
-      BACK_PATH: /index_back
 networks:
   dc-net:
     external: true

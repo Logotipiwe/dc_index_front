@@ -11,8 +11,6 @@ services:
     - ./nginx.conf:/etc/nginx/conf.d/default.conf
     networks:
       - dc-net
-    environment:
-      BACK_PATH: /bek
 networks:
   dc-net:
     external: true
