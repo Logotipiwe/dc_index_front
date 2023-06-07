@@ -1,0 +1,87 @@
+div{
+  display: flex;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  font-family: "TT Norms", sans-serif;
+  background-image: url(../img/login_back.svg);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  background-color: #F3F5F9;
+  margin: 0;
+
+  #form{
+    border-radius: 15px;
+    height: 312px;
+    width: 279px;
+
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+
+    #form_back{
+      background: url("../img/form_back.svg") no-repeat top;
+      background-position-y: -5px;
+      width: 100%;
+      height: 50%;
+      border-radius: 15px 15px 0 0;
+      background-size: cover;
+    }
+
+    h1{
+      //margin-top: calc(50% + 60px);
+      font-size: 15px;
+      color: #2A356B;
+    }
+
+    a{
+      margin-top: 16px;
+      width: 81%;
+      text-decoration: none;
+    }
+
+    button{
+      border: none;
+      width: 100%;
+      background-color: #006EEF;
+      border-radius: 8px;
+      display: flex;
+      height: 57px;
+      justify-content: center;
+      font-size: 14.5px;
+      color: white;
+      align-items: center;
+      outline: none;
+      cursor: pointer;
+
+      img{
+        margin-right: 20px;
+      }
+    }
+    button:hover{
+      background-color: #1178ef;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  body{
+    #form{
+      width: 90%;
+
+      h1{
+        font-size: 18px;
+      }
+      button{
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}

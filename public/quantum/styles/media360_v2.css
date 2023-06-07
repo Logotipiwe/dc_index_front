@@ -1,0 +1,14 @@
+@media (max-width: 360px) {
+  body #header {
+    padding: 0 10vw;
+    align-items: center; }
+    body #header #logo img {
+      height: 55px; }
+    body #header #logo span {
+      font-size: 18px; }
+    body #header #header_burger {
+      margin-bottom: 10px; }
+  body #screen1_content {
+    margin-top: 40px; }
+  body #screen5 {
+    height: 127vh; } }

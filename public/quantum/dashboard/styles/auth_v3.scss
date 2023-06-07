@@ -1,0 +1,163 @@
+div{
+  display: flex;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  font-family: "TT Norms", sans-serif;
+  background-image: url(../img/auth_back.svg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  align-items: center;
+  background-color: #F3F5F9;
+  flex-direction: column;
+  margin: 0;
+
+  #logo{
+    margin-top: 78px;
+    align-items: center;
+    justify-content: space-between;
+
+    img{
+      height: 58px;
+    }
+
+    span{
+      margin-left: 25px;
+      font-size: 21px;
+      color: #2A356B;
+      font-weight: bolder;
+    }
+  }
+
+  #form{
+    margin: auto;
+    width: 500px;
+    flex-direction: column;
+
+    #field{
+      height: 185px;
+      flex-direction: column;
+      margin-bottom: 18px;
+      background: rgba(255, 255, 255, 0.63);
+      border-radius: 15px;
+      align-items: center;
+      padding: 31px 27px;
+      justify-content: space-between;
+
+      #title{
+        align-items: center;
+        img{
+          margin-right: 18px;
+        }
+        span{
+          font-size: 15px;
+          color: #2A356A;
+          font-weight: 500;
+        }
+      }
+
+      input{
+        width: 100%;
+        height: 52px;
+
+        outline: none;
+        background: linear-gradient(0deg, rgba(213, 227, 242, 0.29) -345.83%, rgba(213, 227, 242, 0) 282.5%);
+        border: 1px solid #DCE7F3;
+        box-sizing: border-box;
+        border-radius: 9px;
+        padding-left: 14px;
+        font-size: 13px;
+      }
+    }
+
+    a{
+      height: 62px;
+      width: 100%;
+      text-decoration: none;
+    }
+
+    button{
+      display: flex;
+      height: 100%;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+
+      background: #006EEF;
+      box-shadow: 0 14px 26px -12px rgba(7, 101, 221, 0.34);
+      border-radius: 9px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+
+      img{
+        margin-right: 15px;
+      }
+    }
+    button:hover{
+      background-color: #1178ef;
+    }
+  }
+
+  #agree{
+    margin-bottom: 70px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  body{
+    background-position: initial;
+    #logo{
+      margin-top: 30px;
+      margin-bottom: 20px;
+
+      span{
+        font-size: 22px;
+        margin-bottom: 17px;
+      }
+    }
+
+    #form{
+      margin: auto;
+      width: 90vw;
+
+      #field{
+        padding: 18px 15px;
+        height: 160px;
+
+        #title{
+          flex-direction: column;
+
+          img{
+            margin: 0;
+          }
+          span{
+            font-size: 14px;
+          }
+        }
+        input{
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  body{
+    #form{
+      a{
+        height: 55px;
+      }
+    }
+  }
+}

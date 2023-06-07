@@ -1,0 +1,175 @@
+@media (min-width: 1601px) {
+  body div.dash {
+    width: 60px;
+    height: 6px;
+    border-radius: 3px; }
+  body span.title {
+    font-size: 38px; }
+  body p.text {
+    font-size: 16.2px;
+    line-height: 32px; }
+  body span.number {
+    font-size: 36px; }
+  body a {
+    font-size: 18px; }
+  body .link_arrow {
+    margin-left: 15px;
+    width: 23px;
+    margin-bottom: 3px; }
+  body #header {
+    height: 87px;
+    padding: 0 13.5vw; }
+    body #header #logo img {
+      height: 53px; }
+    body #header #logo span {
+      font-size: 21.2px;
+      margin-left: 38px; }
+    body #header #header_right #db_link {
+      width: 190px;
+      height: 60px;
+      padding: 0 24px;
+      margin-left: 83px; }
+      body #header #header_right #db_link #db_logo_outer {
+        padding: 6px; }
+        body #header #header_right #db_link #db_logo_outer img {
+          height: 17px; }
+      body #header #header_right #db_link span {
+        font-size: 18px; }
+    body #header #header_right > nav {
+      font-size: 17px;
+      margin-left: 54px; }
+    body #header #header_right > nav.selected {
+      font-size: 18px; }
+  body #screen1 {
+    height: 100vh; }
+  body #screen1_back {
+    background-image: url(../img/screen1/back_wide.svg);
+    height: 110vh;
+    right: -238px; }
+  body #screen1_content_anim {
+    width: fit-content;
+    height: fit-content;
+    margin: auto 0; }
+  body #screen1_content {
+    width: 460px;
+    margin-top: 0;
+    margin-left: 13.5vw; }
+    body #screen1_content p:first-of-type {
+      font-size: 14px; }
+    body #screen1_content h1 {
+      font-size: 41px;
+      margin-top: 20px;
+      line-height: 54px; }
+      body #screen1_content h1 span {
+        height: 11px;
+        width: 11px;
+        margin: 0 31px 13px 0; }
+    body #screen1_content p.desc {
+      font-size: 20px;
+      line-height: 41px;
+      font-weight: 500; }
+    body #screen1_content .info_button {
+      margin-top: 28px;
+      width: 173px;
+      height: 58px;
+      padding: 0 26px 0 14px; }
+      body #screen1_content .info_button img {
+        height: 37px; }
+      body #screen1_content .info_button span {
+        font-size: 18px; }
+  body #screen2 {
+    height: 40vh; }
+  body #screen2_left {
+    background-image: url(../img/screen2/back_wide.svg);
+    margin-top: -520.4px;
+    width: 700px;
+    height: 1059px; }
+  body #screen2_content {
+    padding-bottom: 118px;
+    margin-right: 13.5vw;
+    margin-top: 68px;
+    height: 26vh; }
+    body #screen2_content #screen2_title > div:nth-child(2) {
+      margin-top: 20px; }
+    body #screen2_content p.text {
+      width: 420px;
+      margin: 2px 0 8px 98px; }
+    body #screen2_content span.number {
+      font-size: 34px; }
+    body #screen2_content span.title {
+      margin-left: 41px; }
+  body #screen3 {
+    height: 90vh; }
+  body #screen3_right {
+    height: 114vh;
+    margin-top: -137px; }
+  body #screen3_content {
+    width: 630px;
+    margin: 158px 0 0 13.5vw; }
+    body #screen3_content #screen3_title {
+      margin-top: 39px; }
+    body #screen3_content span.title {
+      margin-left: 27px; }
+    body #screen3_content p.text {
+      margin-top: 28px;
+      width: 500px; }
+    body #screen3_content a {
+      margin-top: 0; }
+  body #screen4 {
+    height: 74vh;
+    background-image: url("../img/screen4/back_wide.svg");
+    background-position: top;
+    background-size: cover; }
+  body #screen4_device img {
+    left: 15vw;
+    width: 29vw; }
+  body #screen4_content {
+    width: 520px;
+    margin-right: 13.4vw;
+    margin-top: 46px; }
+    body #screen4_content #screen4_title {
+      margin-top: 35px; }
+    body #screen4_content span.title {
+      margin-left: 16px; }
+    body #screen4_content p.text {
+      margin-top: 39px; }
+    body #screen4_content a {
+      margin-top: 48px; }
+  body #screen5 {
+    height: 97vh;
+    background-image: url("../img/screen5/back_wide_2.svg"); }
+  body #screen5_content {
+    width: 500px;
+    margin: 85px auto 0;
+    text-align: center; }
+    body #screen5_content span.number {
+      margin-bottom: 20px; }
+  body #screen6 {
+    height: auto; }
+  body #screen6_back_left {
+    height: 34vw; }
+  body #screen6_back_right {
+    height: 35vw;
+    background-size: cover;
+    width: 40vw; }
+  body #screen6_content {
+    margin: 50px 13.5vw;
+    height: auto; }
+    body #screen6_content .row > div {
+      height: 215px;
+      padding: 40px 20px 0 41px; }
+      body #screen6_content .row > div h2 {
+        font-size: 25px; }
+      body #screen6_content .row > div p {
+        font-size: 17px;
+        line-height: 33px; }
+    body #screen6_content .row:nth-child(2) {
+      margin-top: 20px; }
+    body #screen6_content .center {
+      margin: 70px auto 0; }
+      body #screen6_content .center img {
+        height: 50px; }
+      body #screen6_content .center span {
+        font-size: 24px;
+        margin-left: 34px;
+        margin-bottom: 13px; } }

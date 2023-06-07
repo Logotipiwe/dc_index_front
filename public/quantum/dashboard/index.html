@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../fonts/monserrat/montserrat.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="index_v3.js"></script>
+</head>
+<body>
+<div id="back_item_1" class="back_item"></div>
+<div id="back_item_2" class="back_item"></div>
+<div id="back_item_3" class="back_item"></div>
+<div id="back_item_4" class="back_item"></div>
+<div id="back_item_5" class="back_item"></div>
+<div id="back_item_6" class="back_item"></div>
+<div id="back_item_7" class="back_item"></div>
+<div id="back_item_8" class="back_item"></div>
+<div class="modal" id="modal_1">
+    <div class="modal_content">
+        <div class="m_header">
+            <img src="img/link_hover.svg" alt="">
+            <span>Название модалки</span>
+        </div>
+        <div class="m_body">
+            <div class="field">
+                <p class="field_title">Expires</p>
+                <div class="field_input">
+                    <div class="field_img">
+                        <img src="img/calendar.svg" alt="">
+                    </div>
+                    <input value="30">
+                </div>
+            </div>
+            <div class="field">
+                <p class="field_title">Cooldown</p>
+                <div class="field_input">
+                    <div class="field_img">
+                        <img src="img/clock.svg" alt="">
+                    </div>
+                    <input>
+                </div>
+            </div>
+            <div class="field">
+                <p class="field_title">Price</p>
+                <div class="field_input">
+                    <div class="field_img">
+                        <img src="img/dollar.svg" alt="">
+                    </div>
+                    <input>
+                </div>
+            </div>
+            <div class="m_checks">
+                <div class="m_check">
+                    <input type="checkbox">
+                    <span>Renewable</span>
+                </div>
+                <div class="m_check">
+                    <input type="checkbox">
+                    <span>Lifetime</span>
+                </div>
+                <div class="m_check">
+                    <input type="checkbox">
+                    <span>Beta</span>
+                </div>
+            </div>
+            <button class="button">
+                <img src="img/confirm.svg" alt="">
+                <span>Create</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal" id="modal_2">
+    <div class="modal_content">
+        <div class="m_header">
+            <img src="img/link_hover.svg" alt="">
+            <span>Название модалки</span>
+        </div>
+        <div class="m_body">
+            <div class="field">
+                <p class="field_title">Password</p>
+                <div class="field_input">
+                    <div class="field_img">
+                        <img src="img/lock.svg" alt="">
+                    </div>
+                    <input value="30">
+                </div>
+            </div>
+            <div class="field">
+                <p class="field_title">Stock</p>
+                <div class="field_input">
+                    <div class="field_img">
+                        <img src="img/bottom_bar.svg" alt="">
+                    </div>
+                    <input value="30">
+                </div>
+            </div>
+            <div class="field">
+                <p class="field_title">Expires</p>
+                <div class="field_input">
+                    <div class="field_img">
+                        <img src="img/calendar.svg" alt="">
+                    </div>
+                    <input value="30">
+                </div>
+            </div>
+            <div class="field">
+                <p class="field_title">Cooldown</p>
+                <div class="field_input">
+                    <div class="field_img">
+                        <img src="img/clock.svg" alt="">
+                    </div>
+                    <input>
+                </div>
+            </div>
+            <div class="field">
+                <p class="field_title">Price</p>
+                <div class="field_input">
+                    <div class="field_img">
+                        <img src="img/dollar.svg" alt="">
+                    </div>
+                    <input>
+                </div>
+            </div>
+            <div class="m_checks">
+                <div class="m_check">
+                    <input type="checkbox">
+                    <span>Renewable</span>
+                </div>
+                <div class="m_check">
+                    <input type="checkbox">
+                    <span>Lifetime</span>
+                </div>
+                <div class="m_check">
+                    <input type="checkbox">
+                    <span>Beta</span>
+                </div>
+                <div class="m_check">
+                    <input type="checkbox">
+                    <span>Autobind</span>
+                </div>
+                <div class="m_check">
+                    <input type="checkbox">
+                    <span>Check burners</span>
+                </div>
+            </div>
+            <button class="button">
+                <img src="img/confirm.svg" alt="">
+                <span>Create</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div id="side">
+    <div id="logo">
+        <a href="../">
+            <img src="../img/screen1/logo_header.svg" alt="">
+            <span>Quantum Flips</span>
+        </a>
+    </div>
+    <div id="side_buttons">
+        <nav class="selected side_button" data-page="1">
+            <button class="button">
+                <img src="img/home.svg" alt="" class="img">
+                <img src="img/home_hover.svg" alt="" class="img_hover">
+                <span>Main</span>
+            </button>
+        </nav>
+        <nav class="side_button" data-page="2">
+            <button class="button">
+                <img src="img/time.svg" alt="" class="img">
+                <img src="img/time_hover.svg" alt="" class="img_hover">
+                <span>Restocks</span>
+            </button>
+        </nav>
+        <nav class="side_button" data-page="3">
+            <button class="button">
+                <img src="img/user_circle.svg" alt="" class="img">
+                <img src="img/user_circle_hover.svg" alt="" class="img_hover">
+                <span>Users</span>
+            </button>
+        </nav>
+    </div>
+</div>
+<main>
+    <div class="main_content" id="main_content_1">
+        <div id="first_row">
+            <div id="account" class="panel">
+                <div class="title">
+                    <img src="img/user.svg" alt="">
+                    <span>Аккаунт</span>
+                </div>
+                <div class="panel_content">
+                    <div class="info">
+                        <img src="img/avatar.png" alt="" id="avatar">
+                        <div>
+                            <span id="login">beibaris.fig#1118</span>
+                            <span id="email">beybaris.balobolov@mail.ru</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="key_panel" class="panel">
+                <div class="title">
+                    <img src="img/key2.svg" alt="">
+                    <span>Ключ</span>
+                </div>
+                <div class="panel_content">
+                    <div class="key_field">
+                        <input/>
+                        <button><img src="img/copy.svg" alt=""></button>
+                        <button><img src="img/hide_inp.svg" alt=""></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="info_panel" class="panel">
+            <div>
+                <h2>Expires Date</h2>
+                <span>02.03.2021</span>
+            </div>
+            <div>
+                <h2>Pricing</h2>
+                <span>2000 RUB/month</span>
+            </div>
+            <div>
+                <h2>Member since</h2>
+                <span>01.01.2021</span>
+            </div>
+        </div>
+        <div id="buttons_row">
+            <button class="button button_hoverable">
+                <img src="img/discord_logo.svg" alt="" class="button_img">
+                <img src="img/discord_logo_hover.svg" alt="" class="button_img_hover">
+                <span>Join Discord</span>
+            </button>
+            <button class="button button_hoverable">
+                <img src="img/link.svg" alt="" class="button_img">
+                <img src="img/link_hover.svg" alt="" class="button_img_hover">
+                <span>Unbind Key</span>
+            </button>
+            <button class="button button_hoverable">
+                <img src="img/logout.svg" alt="" class="button_img">
+                <img src="img/logout_hover.svg" alt="" class="button_img_hover">
+                <span>Sign Out</span>
+            </button>
+        </div>
+    </div>
+    <div class="main_content" id="main_content_2" style="display: none">
+        <div class="interface">
+            <button class="button" id="add_new_btn_1">
+                <img src="img/plus.svg" alt="">
+                <span>Add new</span>
+            </button>
+            <div class="key_field">
+                <input>
+                <img src="img/zoom.svg" alt="">
+            </div>
+        </div>
+        <div class="table">
+            <div class="head_back"></div>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Stock</th>
+                    <th>Sold</th>
+                    <th>Password</th>
+                    <th>Link</th>
+                    <th>Price</th>
+                    <th>Trial days</th>
+                    <th>Initial payment</th>
+                    <th>Sellout time</th>
+                    <th>Created at <img src="img/arrow_down.svg" alt="" class="arr_down"></th>
+                    <th>Last style</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <img src="img/status_green.svg" alt="" class="status_img">
+                    </td>
+                    <td>12</td>
+                    <td>72</td>
+                    <td>demo</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>$30/m</td>
+                    <td>30</td>
+                    <td>$215</td>
+                    <td>-</td>
+                    <td>22.06.20 23:29</td>
+                    <td>22.06.20 23:29</td>
+                    <td>
+                        <button><img src="img/pause.svg" alt=""></button>
+                        <button><img src="img/delete.svg" alt=""></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/status_green.svg" alt="" class="status_img">
+                    </td>
+                    <td>12</td>
+                    <td>72</td>
+                    <td>demo</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>$30/m</td>
+                    <td>30</td>
+                    <td>$215</td>
+                    <td>-</td>
+                    <td>22.06.20 23:29</td>
+                    <td>22.06.20 23:29</td>
+                    <td>
+                        <button><img src="img/pause.svg" alt=""></button>
+                        <button><img src="img/delete.svg" alt=""></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/status_green.svg" alt="" class="status_img">
+                    </td>
+                    <td>12</td>
+                    <td>72</td>
+                    <td>demo</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>$30/m</td>
+                    <td>30</td>
+                    <td>$215</td>
+                    <td>-</td>
+                    <td>22.06.20 23:29</td>
+                    <td>22.06.20 23:29</td>
+                    <td>
+                        <button><img src="img/pause.svg" alt=""></button>
+                        <button><img src="img/delete.svg" alt=""></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/status_green.svg" alt="" class="status_img">
+                    </td>
+                    <td>12</td>
+                    <td>72</td>
+                    <td>demo</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>$30/m</td>
+                    <td>30</td>
+                    <td>$215</td>
+                    <td>-</td>
+                    <td>22.06.20 23:29</td>
+                    <td>22.06.20 23:29</td>
+                    <td>
+                        <button><img src="img/pause.svg" alt=""></button>
+                        <button><img src="img/delete.svg" alt=""></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/status_green.svg" alt="" class="status_img">
+                    </td>
+                    <td>12</td>
+                    <td>72</td>
+                    <td>demo</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>$30/m</td>
+                    <td>30</td>
+                    <td>$215</td>
+                    <td>-</td>
+                    <td>22.06.20 23:29</td>
+                    <td>22.06.20 23:29</td>
+                    <td>
+                        <button><img src="img/pause.svg" alt=""></button>
+                        <button><img src="img/delete.svg" alt=""></button>
+                    </td>
+                </tr>
+            </table>
+            <div class="table_footer">
+                <div class="status_check">
+                    <button><img src="img/checkbox.svg" alt=""></button>
+                    <span>Status</span>
+                </div>
+                <div class="pagination">
+                    <span>1-5 of 5</span>
+                    <button><img src="img/arrow_left.svg" alt=""></button>
+                    <button><img src="img/arrow_right.svg" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main_content" id="main_content_3" style="display: none">
+        <div class="interface">
+            <button class="button" id="add_new_btn_2">
+                <img src="img/plus.svg" alt="">
+                <span>Add new</span>
+            </button>
+            <div class="key_field">
+                <input>
+                <img src="img/zoom.svg" alt="">
+            </div>
+        </div>
+        <div class="table">
+            <div class="head_back"></div>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Plan type</th>
+                    <th>E-mail</th>
+                    <th>Username</th>
+                    <th>Discord ID</th>
+                    <th>Lic. key</th>
+                    <th>Price</th>
+                    <th>Customer</th>
+                    <th>Created at <img src="img/arrow_down.svg" alt="" class="arr_down"></th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tr>
+                    <td>
+                        <img src="img/status_green.svg" alt="" class="status_img">
+                    </td>
+                    <td>Renewal</td>
+                    <td>beybaris@mail.ru</td>
+                    <td>krasavchik</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>$30/m</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>22.06.20 23:29</td>
+                    <td>
+                        <button><img src="img/mail.svg" alt=""></button>
+                        <button><img src="img/link_button.svg" alt=""></button>
+                        <button><img src="img/like.svg" alt=""></button>
+                        <button><img src="img/download.svg" alt=""></button>
+                        <button><img src="img/edit.svg" alt=""></button>
+                        <button><img src="img/delete.svg" alt=""></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/status_green.svg" alt="" class="status_img">
+                    </td>
+                    <td>Renewal</td>
+                    <td>beybaris@mail.ru</td>
+                    <td>krasavchik</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>$30/m</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>22.06.20 23:29</td>
+                    <td>
+                        <button><img src="img/mail.svg" alt=""></button>
+                        <button><img src="img/link_button.svg" alt=""></button>
+                        <button><img src="img/like.svg" alt=""></button>
+                        <button><img src="img/download.svg" alt=""></button>
+                        <button><img src="img/edit.svg" alt=""></button>
+                        <button><img src="img/delete.svg" alt=""></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/status_green.svg" alt="" class="status_img">
+                    </td>
+                    <td>Renewal</td>
+                    <td>beybaris@mail.ru</td>
+                    <td>krasavchik</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>$30/m</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>22.06.20 23:29</td>
+                    <td>
+                        <button><img src="img/mail.svg" alt=""></button>
+                        <button><img src="img/link_button.svg" alt=""></button>
+                        <button><img src="img/like.svg" alt=""></button>
+                        <button><img src="img/download.svg" alt=""></button>
+                        <button><img src="img/edit.svg" alt=""></button>
+                        <button><img src="img/delete.svg" alt=""></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/status_green.svg" alt="" class="status_img">
+                    </td>
+                    <td>Renewal</td>
+                    <td>beybaris@mail.ru</td>
+                    <td>krasavchik</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>$30/m</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>22.06.20 23:29</td>
+                    <td>
+                        <button><img src="img/mail.svg" alt=""></button>
+                        <button><img src="img/link_button.svg" alt=""></button>
+                        <button><img src="img/like.svg" alt=""></button>
+                        <button><img src="img/download.svg" alt=""></button>
+                        <button><img src="img/edit.svg" alt=""></button>
+                        <button><img src="img/delete.svg" alt=""></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/status_green.svg" alt="" class="status_img">
+                    </td>
+                    <td>Renewal</td>
+                    <td>beybaris@mail.ru</td>
+                    <td>krasavchik</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>$30/m</td>
+                    <td>
+                        <button><img src="img/copy.svg" alt=""></button>
+                    </td>
+                    <td>22.06.20 23:29</td>
+                    <td>
+                        <button><img src="img/mail.svg" alt=""></button>
+                        <button><img src="img/link_button.svg" alt=""></button>
+                        <button><img src="img/like.svg" alt=""></button>
+                        <button><img src="img/download.svg" alt=""></button>
+                        <button><img src="img/edit.svg" alt=""></button>
+                        <button><img src="img/delete.svg" alt=""></button>
+                    </td>
+                </tr>
+            </table>
+            <div class="table_footer">
+                <div class="status_check">
+                    <button><img src="img/checkbox.svg" alt=""></button>
+                    <span>Status</span>
+                </div>
+                <div class="pagination">
+                    <span>1-5 of 5</span>
+                    <button><img src="img/arrow_left.svg" alt=""></button>
+                    <button><img src="img/arrow_right.svg" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
