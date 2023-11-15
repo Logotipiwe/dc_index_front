@@ -2,6 +2,7 @@ version: "3"
 services:
   index_front:
     container_name: index_front
+    restart: always
     image: ${IMAGE}
     networks:
       - dc-net
