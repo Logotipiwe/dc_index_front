@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/alex_von_emes/study/react-1/static/css/main.dd7a63a0.css",
+    "main.js": "/alex_von_emes/study/react-1/static/js/main.d9e4cf35.js",
+    "index.html": "/alex_von_emes/study/react-1/index.html",
+    "main.dd7a63a0.css.map": "/alex_von_emes/study/react-1/static/css/main.dd7a63a0.css.map",
+    "main.d9e4cf35.js.map": "/alex_von_emes/study/react-1/static/js/main.d9e4cf35.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd7a63a0.css",
+    "static/js/main.d9e4cf35.js"
+  ]
+}
